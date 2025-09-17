@@ -26,9 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={fontVars}>
       <body className="bg-[var(--bg)]">
-        <Header />
-        {children}
-        <Footer />
+        <div className="page-shell">
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

@@ -24,7 +24,7 @@ export default function Header() {
   };
 
   return (
-    <header className="flexBetween py-5 bg-[var(--nav-bg)]">
+    <header className="flexBetween py-5 bg-[var(--nav-bg)] ">
       {/* логотипы */}
       <Link href={"/"} aria-label="logo" className="flex items-center gap-2">
         <div className="flex items-center gap-[7px]">
@@ -35,8 +35,8 @@ export default function Header() {
       {/* pill-навигация */}
       <nav aria-label="Primary">
         <ul
-          className="
-            grid grid-cols-5  gap-[10px]
+          className="hidden
+            md:grid grid-cols-5  gap-[10px]
              h-11 p-[3px]
             rounded-[100px]  
             border border-[var(--nav-pill-border)]
@@ -64,6 +64,15 @@ export default function Header() {
           })}
         </ul>
       </nav>
+      <Link
+        href={"/"}
+        aria-label="connect"
+        className={
+          "hidden md:inline-flex xl:hidden  md:flexCenter   rounded-[100px] p-[9px]   font-secondary font-medium text-[13px] text-center bg-[var(--nav-bg-active)] text-[var(--nav-text-active)] "
+        }
+      >
+        Connect
+      </Link>
     </header>
   );
 }
