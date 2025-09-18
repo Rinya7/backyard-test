@@ -15,8 +15,13 @@
   /* хедер-капсула (твои два цвета) */
   --nav-bg: #f3f4f6; /* фон шапки */
   --nav-text: #aeb0b1; /* цвет текста навигации */
-  --nav-text-active: #fbfbfc; /* цвет активного текста навигации */
+  /* hover */
+  --nav-text-hover: #6d6e6f; /* цвет текста навигации при ховере */
+  --nav-bg-hover: #3b3b3b;
+  /* chosen (активний/обраний) */
   --nav-bg-active: #303030; /* фон активной навигации */
+  --nav-text-active: #fbfbfc; /* цвет активного текста навигации */
+  /* pill-навигация */
   --nav-pill-bg: #f3f4f6; /* фон капсулы */
   --nav-pill-border: rgba(225, 225, 226, 0.46); /* бордер капсулы */
 }
@@ -86,8 +91,6 @@
     max-width: 1280px;
     padding-left: 84px;
     padding-right: 84px;
-    padding-top: 20px;
-    padding-bottom: 20px;
   }
   /* desktop ≥1920 */
   @media (min-width: 1920px) {

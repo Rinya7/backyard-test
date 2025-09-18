@@ -24,38 +24,54 @@ export default function Header() {
   };
 
   return (
-    <header className="flexBetween py-5 bg-[var(--nav-bg)] ">
+    <header className="flexBetween    bg-[var(--nav-bg)] ">
       {/* логотипы */}
-      <Link href={"/"} aria-label="logo" className="flex items-center gap-2">
-        <div className="flex items-center gap-[7px]">
-          <Image src={logoLeft} alt="logo" width={26} height={26} />
-          <Image src={logoRight} alt="text logo" width={74} height={21} />
-        </div>
+      <Link
+        href={"/"}
+        aria-label="logo"
+        className="flex items-center gap-[7px] pl-[7px] md:pl-[11px] pr-[24px] md:pr-[14px] py-[11px] md:py-[9px]"
+      >
+        <Image
+          src={logoLeft}
+          alt="logo"
+          width={21}
+          height={21}
+          className="md:w-[26px] md:h-[26px]  "
+        />
+        <Image src={logoRight} alt="text logo" width={74} height={21} />
       </Link>
       {/* pill-навигация */}
-      <nav aria-label="Primary">
+      <nav
+        aria-label="Primary"
+        className="hidden md:flex  p-[3px] xl:flex-1 xl:justify-center"
+      >
         <ul
-          className="hidden
-            md:grid grid-cols-5  gap-[10px]
-             h-11 p-[3px]
-            rounded-[100px]  
+          className=" flex xl:flex-1 xl:justify-center   rounded-[100px]  
             border border-[var(--nav-pill-border)]
-            bg-[var(--nav-pill-bg)]
-          "
+            bg-[var(--nav-pill-bg)]"
         >
           {NAV_LINKS.map((link: NavLink) => {
             const active = isActive(link.href);
             return (
-              <li key={link.key} className="contents">
+              <li
+                key={link.key}
+                className={[
+                  "flexCenter rounded-[100px] mr-[1px] p-[9px] xl:p-[11px]   font-secondary font-medium text-[11px] xl:text-[13px] text-center  ",
+                  active
+                    ? "bg-[var(--nav-bg-active)] text-[var(--nav-text-active)] "
+                    : "text-[var(--nav-text)] hover:bg-[var(--nav-bg-hover)] hover:text-[var(--nav-text-hover)] active:opacity-[0.2]",
+                ].join(" ")}
+              >
                 <Link
                   href={link.href}
                   aria-current={active ? "page" : undefined}
-                  className={[
-                    "w-full flexCenter rounded-[100px] p-[11px]   font-secondary font-medium text-[13px] text-center ",
-                    active
-                      ? "bg-[var(--nav-bg-active)] text-[var(--nav-text-active)] "
-                      : "text-[var(--nav-text)] ",
-                  ].join(" ")}
+                  className="flex w-auto"
+                  //  className={[
+                  //    "w-full flexCenter rounded-[100px] p-[9px] xl:p-[11px]   font-secondary font-medium text-[11px] xl:text-[13px] text-center  ",
+                  //    active
+                  //      ? "bg-[var(--nav-bg-active)] text-[var(--nav-text-active)] "
+                  //      : "text-[var(--nav-text)] hover:bg-amber-100",
+                  //  ].join(" ")}
                 >
                   {link.label}
                 </Link>
@@ -64,15 +80,15 @@ export default function Header() {
           })}
         </ul>
       </nav>
-      <Link
-        href={"/"}
-        aria-label="connect"
+      <div
         className={
-          "hidden md:inline-flex xl:hidden  md:flexCenter   rounded-[100px] p-[9px]   font-secondary font-medium text-[13px] text-center bg-[var(--nav-bg-active)] text-[var(--nav-text-active)] "
+          " hidden md:inline-flex xl:hidden  md:flexCenter   rounded-[100px] p-[9px] px-[15px]  font-secondary font-medium  text-[11px] xl:text-[13px] text-center bg-[var(--nav-bg-active)] text-[var(--nav-text-active)] "
         }
       >
-        Connect
-      </Link>
+        <Link href={"/"} aria-label="connect" className={"w-auto  "}>
+          Connect
+        </Link>
+      </div>
     </header>
   );
 }
