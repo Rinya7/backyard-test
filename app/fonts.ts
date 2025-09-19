@@ -32,3 +32,9 @@ export const gilroySemi = localFont({
   variable: "--font-gilroy-semibold",
   display: "swap",
 });
+
+export const gilroyRegular = localFont({
+  src: [{ path: "./fonts/Gilroy-Regular.ttf", weight: "400", style: "normal" }],
+  variable: "--font-gilroy-regular",
+  display: "swap",
+});

@@ -11,6 +11,7 @@
   --second-family: var(--font-konnect); /* "Konnect" */
   --third-family: var(--font-gilroy-medium); /* "Gilroy-Medium" */
   --font3: var(--font-gilroy-semibold);
+  --font-gilroy-regular: var(--font-gilroy-regular);
 
   /* хедер-капсула (твои два цвета) */
   --nav-bg: #f3f4f6; /* фон шапки */
@@ -23,7 +24,18 @@
   --nav-text-active: #fbfbfc; /* цвет активного текста навигации */
   /* pill-навигация */
   --nav-pill-bg: #f3f4f6; /* фон капсулы */
-  --nav-pill-border: rgba(225, 225, 226, 0.46); /* бордер капсулы */
+  --nav-pill-border: #e1e1e275; /* бордер капсулы */
+
+  --color-title-h1: #303030; /* цвет заголовков h1 */
+  --color-here-p: #2626268c; /* цвет заголовков h2 */
+
+  /* CTA (Join Whitelist) */
+  --btn-primary-bg: #2d2d2d;
+  --btn-primary-bg-hover: #303030;
+  --btn-primary-text: #f7f7f7;
+  --btn-secondary-text: #2e2e2e;
+  --btn-secondary-bg: #e6e8ec;
+  --btn-primary-radius: 38px;
 }
 
 @theme {
@@ -114,6 +126,10 @@
 }
 @utility font-gilroy-sb {
   font-family: var(--font3), ui-sans-serif, system-ui, sans-serif;
+}
+
+@utility font-gilroy-r {
+  font-family: var(--font-gilroy-regular), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer utilities {

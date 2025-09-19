@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { archivo, konnect, gilroyMedium, gilroySemi } from "./fonts";
+import {
+  archivo,
+  konnect,
+  gilroyMedium,
+  gilroySemi,
+  gilroyRegular,
+} from "./fonts";
 import Favicon from "@/public/favicons/logo.png";
 import Footer from "@/components/03_Footer";
 import Header from "@/components/00_Header";
@@ -21,11 +27,12 @@ export default function RootLayout({
     konnect.variable,
     gilroyMedium.variable,
     gilroySemi.variable,
+    gilroyRegular.variable,
   ].join(" ");
 
   return (
     <html lang="en" className={fontVars}>
-      <body className="bg-[var(--bg)]">
+      <body className="relative  bg-[var(--bg)] bg-[url('/grid2.png')] md:bg-[url('/grid.png')] bg-cover   md:bg-auto      bg-no-repeat overflow-x-hidden  ">
         <div className="page-shell">
           <Header />
           <main>{children}</main>

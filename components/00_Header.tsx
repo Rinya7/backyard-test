@@ -24,7 +24,7 @@ export default function Header() {
   };
 
   return (
-    <header className="flexBetween    bg-[var(--nav-bg)] ">
+    <header className="flexBetween      ">
       {/* логотипы */}
       <Link
         href={"/"}
@@ -66,12 +66,6 @@ export default function Header() {
                   href={link.href}
                   aria-current={active ? "page" : undefined}
                   className="flex w-auto"
-                  //  className={[
-                  //    "w-full flexCenter rounded-[100px] p-[9px] xl:p-[11px]   font-secondary font-medium text-[11px] xl:text-[13px] text-center  ",
-                  //    active
-                  //      ? "bg-[var(--nav-bg-active)] text-[var(--nav-text-active)] "
-                  //      : "text-[var(--nav-text)] hover:bg-amber-100",
-                  //  ].join(" ")}
                 >
                   {link.label}
                 </Link>
@@ -82,7 +76,7 @@ export default function Header() {
       </nav>
       <div
         className={
-          " hidden md:inline-flex xl:hidden  md:flexCenter   rounded-[100px] p-[9px] px-[15px]  font-secondary font-medium  text-[11px] xl:text-[13px] text-center bg-[var(--nav-bg-active)] text-[var(--nav-text-active)] "
+          " hidden md:inline-flex xl:hidden  md:flexCenter   rounded-[100px] p-[9px] px-[15px]  font-secondary font-medium  text-[11px] xl:text-[13px] text-center bg-[var(--nav-bg-active)] text-[var(--nav-text-active)] hover:bg-[var(--nav-bg-hover)] hover:text-[var(--nav-text-hover)] active:opacity-[0.2]"
         }
       >
         <Link href={"/"} aria-label="connect" className={"w-auto  "}>
