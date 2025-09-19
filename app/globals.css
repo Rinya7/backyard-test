@@ -32,9 +32,17 @@
   /* CTA (Join Whitelist) */
   --btn-primary-bg: #2d2d2d;
   --btn-primary-bg-hover: #303030;
+  --btn-primary-text-hover: #d1d1d2;
+  --btn-primary-bg-active: #2d2d2d;
+  --btn-primary-text-active: #595959;
   --btn-primary-text: #f7f7f7;
-  --btn-secondary-text: #2e2e2e;
+  /* secondary button (Read Docs) */
   --btn-secondary-bg: #e6e8ec;
+  --btn-secondary-bg-hover: #f8fbff;
+  --btn-secondary-bg-active: #abacaf;
+  --btn-secondary-text: #2e2e2e;
+  --btn-secondary-text-hover: #2e2e2ebf;
+  --btn-secondary-text-active: #2e2e2e;
   --btn-primary-radius: 38px;
 }
 

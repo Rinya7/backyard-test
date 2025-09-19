@@ -46,7 +46,7 @@ export default function Hero() {
     backdrop-blur-[4px]
     bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)]
     font-primary font-semibold text-[16px] leading-[22px] tracking-[0.02em] text-center
-    transition-colors hover:bg-[var(--btn-primary-bg-hover)]"
+    transition-colors hover:bg-[var(--btn-primary-bg-hover)] hover:text-[var(--btn-primary-text-hover)] active:text-[var(--btn-primary-text-active)] active:bg-[var(--btn-primary-bg-active)]"
         >
           Join Whitelist
         </Link>
@@ -58,7 +58,7 @@ export default function Hero() {
     backdrop-blur-[4px]
     bg-[var(--btn-secondary-bg)] text-[var(--btn-secondary-text)]
     font-primary font-semibold text-[16px] leading-[22px] tracking-[0.02em] text-center
-    transition-colors hover:bg-[var(--btn-primary-bg-hover)]"
+    transition-colors hover:bg-[var(--btn-secondary-bg-hover)] hover:text-[var(--btn-secondary-text-hover)]  active:text-[var(--btn-secondary-text-active)] active:bg-[var(--btn-secondary-bg-active)]"
         >
           <p className="mr-[10px]">Read Docs</p>
           <Image src={row} alt="logo" width={10} height={10} className=" " />
