@@ -4,7 +4,7 @@
 
 :root {
   /* главный фон всей страницы */
-  --bg: #efeff2;
+  --bg: #fdfdfd;
 
   /* твій інспектор: */
   --font-family: var(--font-archivo); /* "Archivo" */
