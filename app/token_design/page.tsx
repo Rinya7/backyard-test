@@ -1,5 +1,12 @@
+import Hero from "@/components/01_Hero";
+import WhatIsBackyard from "@/components/02_WhatIsBackyard";
 import React from "react";
 
 export default function page() {
-  return <div>token_design</div>;
+  return (
+    <>
+      <Hero />
+      <WhatIsBackyard />
+    </>
+  );
 }
