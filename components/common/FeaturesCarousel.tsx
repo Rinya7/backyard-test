@@ -8,7 +8,7 @@ type Item = {
   pill: string;
   title: string;
   body: string;
-  image: StaticImageData; // ← вместо any
+  image: StaticImageData;
 };
 
 export default function FeaturesCarousel({ items }: { items: Item[] }) {
@@ -37,7 +37,7 @@ export default function FeaturesCarousel({ items }: { items: Item[] }) {
 
   return (
     <div aria-label="What is Backyard">
-      {/* КАРУСЕЛЬ: до xl (мобілка + планшет + ноут) */}
+      {/* КАРУСЕЛЬ: до xl (мобілка + планшет ) */}
       <div
         ref={railRef}
         className="
@@ -57,7 +57,7 @@ export default function FeaturesCarousel({ items }: { items: Item[] }) {
         ))}
       </div>
 
-      {/* точки прогресу тільки коли є карусель */}
+      {/* точки прогресу  */}
       <div className="xl:hidden mt-3 flex items-center justify-center gap-2">
         {items.map((_, i) => (
           <span

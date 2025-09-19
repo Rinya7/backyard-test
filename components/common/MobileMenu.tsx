@@ -5,6 +5,8 @@ import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { NAV_LINKS } from "@/constants";
+import { isPathActive } from "@/utils/isPathActive";
+import { usePathname } from "next/navigation";
 
 type Props = {
   open: boolean;
@@ -13,15 +15,14 @@ type Props = {
 };
 
 export default function MobileMenu({ open, onOpenChange, top = 64 }: Props) {
+  const pathname = usePathname();
+  const GAP = 20;
   // Esc
   useEffect(() => {
     const h = (e: KeyboardEvent) => e.key === "Escape" && onOpenChange(false);
     document.addEventListener("keydown", h);
     return () => document.removeEventListener("keydown", h);
   }, [onOpenChange]);
-  const GAP = 20;
-  // Не блокируем весь экран — оверлея нет. Если нужен лёгкий клик-аут:
-  // можно добавить прозрачную кнопку под карточкой.
 
   return (
     <div className="md:hidden">
@@ -42,8 +43,6 @@ export default function MobileMenu({ open, onOpenChange, top = 64 }: Props) {
               className="fixed z-[70] left--1/2 -translate-x-3/4"
               style={{ top: top + GAP }}
             >
-              {/* Карточка меню под хедером */}
-              {/* Карточка меню под хедером (компакт как в макете) */}
               <motion.div
                 className="
     relative
@@ -63,30 +62,33 @@ export default function MobileMenu({ open, onOpenChange, top = 64 }: Props) {
               >
                 {/* список */}
                 <nav className="space-y-[14px] text-[14px] leading-[20px]">
-                  {NAV_LINKS.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => onOpenChange(false)}
-                      className={
-                        link.active
-                          ? "block text-neutral-900 font-semibold"
-                          : "block text-neutral-500 hover:text-neutral-900"
-                      }
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
+                  {NAV_LINKS.map((l) => {
+                    const active = isPathActive(pathname, l.href);
+                    return (
+                      <Link
+                        key={l.href}
+                        href={l.href}
+                        onClick={() => onOpenChange(false)}
+                        aria-current={active ? "page" : undefined}
+                        className={
+                          active
+                            ? "block text-neutral-900 font-semibold"
+                            : "block text-neutral-500 hover:text-neutral-900"
+                        }
+                      >
+                        {l.label}
+                      </Link>
+                    );
+                  })}
                 </nav>
 
-                {/* кнопка Connect как в макете — с внутренними отступами */}
                 <button
                   onClick={() => onOpenChange(false)}
                   className="
     font-secondary  
       mt-[16px]
-      w-[calc(100%-16px)]    /* чуть меньше ширины карточки */
-      ml-[0px]               /* текст/левый край совпадают */
+      w-[calc(100%-16px)]    
+      ml-[0px]              
       rounded-full
        
       py-[10px]
